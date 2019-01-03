@@ -8,6 +8,11 @@ const PORT = 3000;
 // Static files
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Get with prodcuts IDs
+app.get('/:id', (req, res) => {
+  res.sendFile(__dirname + '/public/index.html');
+});
+
 // Middleware
 app.use(morgan('dev'));
 
